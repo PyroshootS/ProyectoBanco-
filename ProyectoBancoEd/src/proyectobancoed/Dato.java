@@ -1,7 +1,7 @@
 package proyectobancoed;
 
-
 public class Dato {
+
     private String Nombre;
     private int Cedula;
     private String NumTelefono;
@@ -55,8 +55,5 @@ public class Dato {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
-    
-    
+
 }
