@@ -7,6 +7,7 @@ public class Dato {
     private String NumTelefono;
     private int Edad;
     private int id;
+    private String Direccion;
 
     public Dato() {
         this.Nombre = "";
@@ -14,6 +15,7 @@ public class Dato {
         this.NumTelefono = "";
         this.Edad = 0;
         this.id = 0;
+        this.Direccion = "";
     }
 
     public String getNombre() {
@@ -54,6 +56,14 @@ public class Dato {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
 }
