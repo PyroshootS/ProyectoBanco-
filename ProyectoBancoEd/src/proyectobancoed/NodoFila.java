@@ -5,6 +5,7 @@ public class NodoFila {
     private Dato datoF;
     private NodoFila SiguienteF;
     private NodoFila anteriorF;
+    
 
     public NodoFila() {
         this.SiguienteF = null;
