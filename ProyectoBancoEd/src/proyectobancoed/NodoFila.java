@@ -4,12 +4,11 @@ public class NodoFila {
 
     private Dato datoF;
     private NodoFila SiguienteF;
-    private NodoFila anteriorF;
+    
     
 
     public NodoFila() {
         this.SiguienteF = null;
-        this.anteriorF = null;
     }
 
     public Dato getDatoF() {
@@ -26,14 +25,6 @@ public class NodoFila {
 
     public void setSiguienteF(NodoFila Siguiente) {
         this.SiguienteF = Siguiente;
-    }
-
-    public NodoFila getAnteriorF() {
-        return anteriorF;
-    }
-
-    public void setAnteriorF(NodoFila anteriorF) {
-        this.anteriorF = anteriorF;
     }
 
 

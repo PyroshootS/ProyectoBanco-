@@ -19,6 +19,54 @@ public class BD {
             return false;
         }
     }
+    public  void insertarBD(){
+        
+////////////////////////////////////////////////////////cambiar esto , porque se deben agarrar los datos insertados en fila directamente, no volver a preguntar por los datos/////////////////////////////////////////////////////////////////////       
+        Dato d = new Dato();
+        
+        d.setNombre(JOptionPane.showInputDialog(null, "Digite el nombre:"));
+        d.setCedula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: ")));
+        d.setNumTelefono(JOptionPane.showInputDialog(null, "Digite el número de teléfono: "));
+        d.setEdad(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la edad: ")));
+        d.setDireccion(JOptionPane.showInputDialog(null, "Digite la dirrección: "));
+
+        d.setId(Integer.parseInt("Digite el id: "));
+
+        NodoBD nuevo = new NodoBD();
+        nuevo.setDatoBd(d);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (vacia()){
+            inicioBD = nuevo;
+            finBD = nuevo;
+            finBD.setSiguienteBd(inicioBD);
+            inicioBD.setAnteriorBd(finBD);
+
+        }else if (d.getId() < inicioBD.getDatoBd().getId()){
+            nuevo.setSiguienteBd(inicioBD);
+            inicioBD = nuevo;
+            finBD.setSiguienteBd(inicioBD);
+            inicioBD.setAnteriorBd(finBD);
+
+        }else if(d.getId() > finBD.getDatoBd().getId()){
+            finBD.setSiguienteBd(nuevo);
+            finBD = finBD.getSiguienteBd();
+            finBD.setSiguienteBd(inicioBD);
+            inicioBD.setAnteriorBd(finBD);
+
+        }else{
+            NodoBD aux = inicioBD;
+            while(aux.getSiguienteBd().getDatoBd().getId() < d.getId()){
+                aux = aux.getSiguienteBd();
+            }
+            nuevo.setSiguienteBd(aux.getSiguienteBd());
+            nuevo.setAnteriorBd(aux);
+            aux.setSiguienteBd(nuevo);
+            nuevo.getSiguienteBd().setAnteriorBd(nuevo);
+        }
+
+         
+
+    }
     
 ////////////////////////////FALTA PROBAR EN LISTA (Ya esta probado en un ejemplo de una lista circular faltaria en nuestro ejemplo)///////////////////////////////////////////////////////////////////////////////
     public void Eliminar(){
