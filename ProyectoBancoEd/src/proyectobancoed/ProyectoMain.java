@@ -41,8 +41,8 @@ public class ProyectoMain {
                     
                     break;
                 case 3:
-                    
-                    b.Eliminar();
+                    b.Buscar();
+                    //b.Eliminar();
                     break;
                     
                 case 4:
