@@ -3,7 +3,7 @@ package proyectobancoed;
 import javax.swing.JOptionPane;
 
 
-public class BD {
+public class BD extends Fila{
    private NodoBD inicioBD;
     private NodoBD finBD;
 
@@ -19,18 +19,21 @@ public class BD {
             return false;
         }
     }
-    public  void insertarBD(){
+    public  void insertarBD(String nombre, int id){
         
 ////////////////////////////////////////////////////////cambiar esto , porque se deben agarrar los datos insertados en fila directamente, no volver a preguntar por los datos/////////////////////////////////////////////////////////////////////       
         Dato d = new Dato();
         
-        d.setNombre(JOptionPane.showInputDialog(null, "Digite el nombre:"));
-        d.setCedula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: ")));
-        d.setNumTelefono(JOptionPane.showInputDialog(null, "Digite el número de teléfono: "));
-        d.setEdad(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la edad: ")));
-        d.setDireccion(JOptionPane.showInputDialog(null, "Digite la dirrección: "));
-
-        d.setId(Integer.parseInt("Digite el id: "));
+        d.setNombre(nombre);
+        d.setId(id);
+        
+////        d.getNombre(JOptionPane.showMessageDialog(null, ""));
+//        d.setCedula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: ")));
+//        d.setNumTelefono(JOptionPane.showInputDialog(null, "Digite el número de teléfono: "));
+//        d.setEdad(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la edad: ")));
+//        d.setDireccion(JOptionPane.showInputDialog(null, "Digite la dirrección: "));
+//
+//        d.setId(Integer.parseInt("Digite el id: "));
 
         NodoBD nuevo = new NodoBD();
         nuevo.setDatoBd(d);
