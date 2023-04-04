@@ -20,52 +20,48 @@ public class Fila {
         }
     }
 
-    public  void insertarFila(){
+    public void insertarFila(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id) {
         Dato d = new Dato();
 
-        d.setNombre(JOptionPane.showInputDialog(null, "Digite el nombre:"));
-        d.setCedula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: ")));
-        d.setNumTelefono(JOptionPane.showInputDialog(null, "Digite el número de teléfono: "));
-        d.setEdad(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la edad: ")));
-        d.setDireccion(JOptionPane.showInputDialog(null, "Digite la dirrección: "));
-
-        d.setId(Integer.parseInt("Digite el id: "));
-
+        d.setNombre(Nombre);
+        d.setCedula(Cedula);
+        d.setNumTelefono(NumTel);
+        d.setEdad(Edad);
+        d.setDireccion(Direccion);
+        d.setId(id);
+        
+        
         NodoFila nuevo = new NodoFila();
         nuevo.setDatoF(d);
 
-        if (vacia()){
+        if (vacia()) {
             inicioF = nuevo;
             finF = nuevo;
-            finF.setSiguienteF(inicioF);
-            inicioF.setAnteriorF(finF);
-
-        }else if (d.getId() < inicioF.getDatoF().getId()){
-            nuevo.setSiguienteF(inicioF);
-            inicioF = nuevo;
-            finF.setSiguienteF(inicioF);
-            inicioF.setAnteriorF(finF);
-
-        }else if(d.getId() > finF.getDatoF().getId()){
+        } else {
             finF.setSiguienteF(nuevo);
-            finF = finF.getSiguienteF();
-            finF.setSiguienteF(inicioF);
-            inicioF.setAnteriorF(finF);
-
-        }else{
+            finF = nuevo;
+        }
+    }
+    
+    public void mostrarFila() {
+        if (!vacia()) {
+            String s = "";
             NodoFila aux = inicioF;
-            while(aux.getSiguienteF().getDatoF().getId() < d.getId()){
+            while (aux != null) {
+                s += aux.getDatoF().getNombre() + " // "
+                        + aux.getDatoF().getId() + " // "
+                        + aux.getDatoF().getCedula() + " // "
+                        + aux.getDatoF().getEdad() + " // "
+                        + aux.getDatoF().getDireccion() + " // "
+                        + aux.getDatoF().getNumTelefono()+ " -> ";
                 aux = aux.getSiguienteF();
             }
-            nuevo.setSiguienteF(aux.getSiguienteF());
-            nuevo.setAnteriorF(aux);
-            aux.setSiguienteF(nuevo);
-            nuevo.getSiguienteF().setAnteriorF(nuevo);
+            JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
+                    JOptionPane.PLAIN_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error, No se puede mostrar", "Lista Vacía",
+                    JOptionPane.ERROR_MESSAGE);
         }
-
-         
-
     }
-
 
 }

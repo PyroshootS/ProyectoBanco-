@@ -19,11 +19,39 @@ public class Reporte {
             return false;
         }
     }
-    
-    
-    
-/////////////////////////////////////////////Falta  de Probar en nuestra lista (ya probado en una lista aparte)////////////////////////////////////////////////////////////////////////////////
-    public void mostrar() {
+
+    public void insertarReporte(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id) {
+        Dato d = new Dato();
+
+        d.setNombre(Nombre);
+        d.setCedula(Cedula);
+        d.setNumTelefono(NumTel);
+        d.setEdad(Edad);
+        d.setDireccion(Direccion);
+        d.setId(id);
+
+        NodoReporte nuevo = new NodoReporte();
+        nuevo.setDatoR(d);
+
+        if (vacia()) {
+            inicioR = nuevo;
+        } else if (d.getId() < inicioR.getDatoR().getId()) {
+            nuevo.setSiguienteR(inicioR);
+            inicioR = nuevo;
+        } else if (inicioR.getSiguienteR() == null) {
+            inicioR.setSiguienteR(nuevo);
+        } else {
+            NodoReporte aux = inicioR;
+            while (aux.getSiguienteR() != null
+                    && aux.getSiguienteR().getDatoR().getId() < d.getId()) {
+                aux = aux.getSiguienteR();
+            }
+            nuevo.setSiguienteR(aux.getSiguienteR());
+            aux.setSiguienteR(nuevo);
+        }
+    }
+
+    public void mostrarReporte() {
         if (!vacia()) {
             String s = "";
             NodoReporte aux = inicioR;
@@ -33,7 +61,7 @@ public class Reporte {
                         + aux.getDatoR().getCedula() + " // "
                         + aux.getDatoR().getEdad() + " // "
                         + aux.getDatoR().getDireccion() + " // "
-                        + aux.getDatoR().getNumTelefono()+ " -> ";
+                        + aux.getDatoR().getNumTelefono() + " -> ";
                 aux = aux.getSiguienteR();
             }
             JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
@@ -43,5 +71,5 @@ public class Reporte {
                     JOptionPane.ERROR_MESSAGE);
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }
