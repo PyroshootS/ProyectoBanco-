@@ -13,10 +13,11 @@ public class ProyectoMain {
         int op = 0;
         while (op != 5) {
             op = Integer.parseInt(JOptionPane.showInputDialog(null, "Menu Principal\n"
-                    + "1. Insertar\n"
-                    + "2. Desencolar elemento\n"
-                    + "3. Mostrar elementos\n"
-                    + "4. Salir\n" + "Digite la opción deseada: "));
+                    + "1. Insertar todos\n"
+                    + "2. Mostrar todos\n"
+                    + "3. Buscar\n"
+                    + "4. Eliminar\n"
+                    + "5. Salir\n" + "Digite la opción deseada: "));
             switch (op) {
                 case 1:
                     
@@ -42,13 +43,13 @@ public class ProyectoMain {
                     break;
                 case 3:
                     b.Buscar();
-                    //b.Eliminar();
                     break;
                     
                 case 4:
-                    
+                    b.Eliminar();
+                    break;
+                case 5:
                     System.exit(0);
-                    
                 default:
                     JOptionPane.showMessageDialog(null, "Error opción inválida",
                             "Error", JOptionPane.ERROR_MESSAGE);
