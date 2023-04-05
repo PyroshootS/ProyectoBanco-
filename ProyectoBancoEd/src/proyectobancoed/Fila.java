@@ -48,15 +48,15 @@ public class Fila {
             String s = "";
             NodoFila aux = inicioF;
             while (aux != null) {
-                s += aux.getDatoF().getNombre() + " // "
-                        + aux.getDatoF().getId() + " // "
-                        + aux.getDatoF().getCedula() + " // "
-                        + aux.getDatoF().getEdad() + " // "
-                        + aux.getDatoF().getDireccion() + " // "
-                        + aux.getDatoF().getNumTelefono()+ " -> ";
+                s +="Nombre: "+ aux.getDatoF().getNombre() + " \n "
+                        + "ID: "+aux.getDatoF().getId() + " \n "
+                        + "Cédula: "+aux.getDatoF().getCedula() + " \n "
+                        + "Edad: "+aux.getDatoF().getEdad() + " \n "
+                        + "Dirección: "+aux.getDatoF().getDireccion() + " \n "
+                        + "Teléfono: "+aux.getDatoF().getNumTelefono()+ " \n ";
                 aux = aux.getSiguienteF();
             }
-            JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
+            JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Usuarios",
                     JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error, No se puede mostrar", "Lista Vacía",

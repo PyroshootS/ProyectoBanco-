@@ -56,15 +56,15 @@ public class Reporte {
             String s = "";
             NodoReporte aux = inicioR;
             while (aux != null) {
-                s += aux.getDatoR().getNombre() + " // "
-                        + aux.getDatoR().getId() + " // "
-                        + aux.getDatoR().getCedula() + " // "
-                        + aux.getDatoR().getEdad() + " // "
-                        + aux.getDatoR().getDireccion() + " // "
-                        + aux.getDatoR().getNumTelefono() + " -> ";
+                s += "Nombre: "+aux.getDatoR().getNombre() + " \n "
+                        + "ID: "+aux.getDatoR().getId() + " \n "
+                        + "Cédula: "+aux.getDatoR().getCedula() + " \n "
+                        + "Edad: "+ aux.getDatoR().getEdad() + " \n "
+                        + "Dirección: "+aux.getDatoR().getDireccion() + " \n"
+                        + "Teléfono: "+aux.getDatoR().getNumTelefono() + " \n ";
                 aux = aux.getSiguienteR();
             }
-            JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
+            JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Reporte",
                     JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error, No se puede mostrar", "Lista Vacía",

@@ -125,23 +125,23 @@ public class BD {
         if (!vacia()) {
             String s = "";
             NodoBD aux = inicioBD;
-            s += aux.getDatoBd().getNombre() + " // "
-                    + aux.getDatoBd().getId() + " // "
-                    + aux.getDatoBd().getCedula() + " // "
-                    + aux.getDatoBd().getEdad() + " // "
-                    + aux.getDatoBd().getDireccion() + " // "
-                    + aux.getDatoBd().getNumTelefono() + " -> ";
+            s += "Nombre: "+ aux.getDatoBd().getNombre() + "\n "
+                    +"ID: "+ aux.getDatoBd().getId() + " \n "
+                    + "Cédula: "+aux.getDatoBd().getCedula() + " \n "
+                    + "Edad: "+aux.getDatoBd().getEdad() + " \n "
+                    + "Dirección: "+aux.getDatoBd().getDireccion() + " \n "
+                    + "Teléfono: "+aux.getDatoBd().getNumTelefono() + " \n ";
             aux = aux.getSiguienteBd();
             while (aux != inicioBD) {
-                s += aux.getDatoBd().getNombre() + " // "
-                        + aux.getDatoBd().getId() + " // "
-                        + aux.getDatoBd().getCedula() + " // "
-                        + aux.getDatoBd().getEdad() + " // "
-                        + aux.getDatoBd().getDireccion() + " // "
-                        + aux.getDatoBd().getNumTelefono() + " -> ";
+                s +="Nombre: "+ aux.getDatoBd().getNombre() + " \n "
+                        + "ID: "+aux.getDatoBd().getId() + " \n "
+                        + "Cédula: "+aux.getDatoBd().getCedula() + " \n "
+                        + "Edad: "+aux.getDatoBd().getEdad() + " \n "
+                        + "Dirección: "+aux.getDatoBd().getDireccion() + " \n "
+                        + "Teléfono: "+aux.getDatoBd().getNumTelefono() + " \n ";
                 aux = aux.getSiguienteBd();
             }
-            JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
+            JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Base de Datos",
                     JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error, No se puede mostrar", "Lista Vacía",
