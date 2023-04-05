@@ -16,8 +16,9 @@ public class ProyectoMain {
                     + "1. Insertar todos\n"
                     + "2. Mostrar todos\n"
                     + "3. Buscar\n"
-                    + "4. Eliminar\n"
-                    + "5. Salir\n" + "Digite la opción deseada: "));
+                    + "4. Editar\n"
+                    + "5. Eliminar\n"
+                    + "6. Salir\n" + "Digite la opción deseada: "));
             switch (op) {
                 case 1:
                     
@@ -25,30 +26,37 @@ public class ProyectoMain {
                     int CedulaN = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: "));
                     String NumTelN = JOptionPane.showInputDialog(null, "Digite el número de teléfono: ");
                     int EdadN = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la edad: "));
-                    String DireccionN = JOptionPane.showInputDialog(null, "Digite la dirrección: ");
+                    String DireccionN = JOptionPane.showInputDialog(null, "Digite la dirección: ");
                     int idN = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite el id: "));
                     
                     
                     f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
                     b.insertarBD(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
                     r.insertarReporte(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
-                    
                     break;
+                    
                 case 2:
                     
                     f.mostrarFila();
                     b.mostrarBD();
                     r.mostrarReporte();
-                    
                     break;
+                    
                 case 3:
                     b.Buscar();
                     break;
                     
                 case 4:
+                    f.editarFila();
+                    b.editarBD();
+                    r.editarReporte();
+                    break;
+                    
+                case 5:
                     b.Eliminar();
                     break;
-                case 5:
+                    
+                case 6:
                     System.exit(0);
                 default:
                     JOptionPane.showMessageDialog(null, "Error opción inválida",
