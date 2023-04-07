@@ -38,16 +38,15 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         BotonInsertarUsuario = new javax.swing.JMenuItem();
-        BotonMostrarUsuarios = new javax.swing.JMenuItem();
-        BotonModificarUsuario = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        BotonMstrarFila = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         BotonBusacrBD = new javax.swing.JMenuItem();
         BotonMostrarBD = new javax.swing.JMenuItem();
-        BtonEditarBD = new javax.swing.JMenuItem();
         BotonEliminarBD = new javax.swing.JMenuItem();
+        BotonModificarBD = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         BotonMostrarReporte = new javax.swing.JMenuItem();
-        BotonEditarReporte = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,23 +64,19 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(BotonInsertarUsuario);
 
-        BotonMostrarUsuarios.setText("Mostrar Usuarios");
-        BotonMostrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonMostrarUsuariosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(BotonMostrarUsuarios);
-
-        BotonModificarUsuario.setText("Modificar Usuario");
-        BotonModificarUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonModificarUsuarioActionPerformed(evt);
-            }
-        });
-        jMenu1.add(BotonModificarUsuario);
-
         jMenuBar1.add(jMenu1);
+
+        jMenu4.setText("Fila del Banco");
+
+        BotonMstrarFila.setText("Mostrar Fila");
+        BotonMstrarFila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMstrarFilaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(BotonMstrarFila);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu2.setText("Base de Datos");
 
@@ -101,21 +96,21 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu2.add(BotonMostrarBD);
 
-        BtonEditarBD.setText("Editar Usuario en Base de Datos");
-        BtonEditarBD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtonEditarBDActionPerformed(evt);
-            }
-        });
-        jMenu2.add(BtonEditarBD);
-
-        BotonEliminarBD.setText("Eliminar Usaurio en Base de Datos");
+        BotonEliminarBD.setText("Eliminar Usuario en Base de Datos");
         BotonEliminarBD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEliminarBDActionPerformed(evt);
             }
         });
         jMenu2.add(BotonEliminarBD);
+
+        BotonModificarBD.setText("Modificarn en Base de Datos");
+        BotonModificarBD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonModificarBDActionPerformed(evt);
+            }
+        });
+        jMenu2.add(BotonModificarBD);
 
         jMenuBar1.add(jMenu2);
 
@@ -128,14 +123,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jMenu3.add(BotonMostrarReporte);
-
-        BotonEditarReporte.setText("Editar Reporte");
-        BotonEditarReporte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEditarReporteActionPerformed(evt);
-            }
-        });
-        jMenu3.add(BotonEditarReporte);
 
         jMenuBar1.add(jMenu3);
 
@@ -151,13 +138,13 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonInsertarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInsertarUsuarioActionPerformed
+    private void BotonInsertarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         // TODO add your handling code here:
         String NombreN = JOptionPane.showInputDialog(null, "Digite el nombre:");
         int CedulaN = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite la cédula: "));
@@ -169,40 +156,12 @@ public class Menu extends javax.swing.JFrame {
         f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
         b.insertarBD(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
         r.insertarReporte(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
-    }//GEN-LAST:event_BotonInsertarUsuarioActionPerformed
-
-    private void BotonModificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarUsuarioActionPerformed
-        // TODO add your handling code here:
-        f.editarFila();
-        b.editarBD();
-        r.editarReporte();
-    }//GEN-LAST:event_BotonModificarUsuarioActionPerformed
-
-    private void BotonMostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarUsuariosActionPerformed
-        // TODO add your handling code here:
-        f.mostrarFila();
-        b.mostrarBD();
-        r.mostrarReporte();
-    }//GEN-LAST:event_BotonMostrarUsuariosActionPerformed
+    }                                                    
 
     private void BotonEliminarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarBDActionPerformed
         // TODO add your handling code here:
         b.Eliminar();
     }//GEN-LAST:event_BotonEliminarBDActionPerformed
-
-    private void BtonEditarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtonEditarBDActionPerformed
-        // TODO add your handling code here:
-        f.editarFila();
-        b.editarBD();
-        r.editarReporte();
-    }//GEN-LAST:event_BtonEditarBDActionPerformed
-
-    private void BotonEditarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarReporteActionPerformed
-        // TODO add your handling code here:
-        f.editarFila();
-        b.editarBD();
-        r.editarReporte();
-    }//GEN-LAST:event_BotonEditarReporteActionPerformed
 
     private void BotonMostrarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarBDActionPerformed
         // TODO add your handling code here:
@@ -222,6 +181,18 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         b.Buscar();
     }//GEN-LAST:event_BotonBusacrBDActionPerformed
+
+    private void BotonMstrarFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMstrarFilaActionPerformed
+        // TODO add your handling code here:
+        f.mostrarFila();
+        b.mostrarBD();
+        r.mostrarReporte();
+    }//GEN-LAST:event_BotonMstrarFilaActionPerformed
+
+    private void BotonModificarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarBDActionPerformed
+        // TODO add your handling code here:
+        b.editarBD();
+    }//GEN-LAST:event_BotonModificarBDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,18 +231,17 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem BotonBusacrBD;
-    private javax.swing.JMenuItem BotonEditarReporte;
     private javax.swing.JMenuItem BotonEliminarBD;
     private javax.swing.JMenuItem BotonInsertarUsuario;
-    private javax.swing.JMenuItem BotonModificarUsuario;
+    private javax.swing.JMenuItem BotonModificarBD;
     private javax.swing.JMenuItem BotonMostrarBD;
     private javax.swing.JMenuItem BotonMostrarReporte;
-    private javax.swing.JMenuItem BotonMostrarUsuarios;
-    private javax.swing.JMenuItem BtonEditarBD;
+    private javax.swing.JMenuItem BotonMstrarFila;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

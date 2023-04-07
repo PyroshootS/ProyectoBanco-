@@ -72,38 +72,38 @@ public class Reporte {
         }
     }
     
-        public void editarReporte() {
-        try {
-            int idRegistro = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un ID ya registrado que desea editar:"));
-            NodoReporte aux = inicioR;
-            boolean encontrado = false;
-            do {
-                if (aux.getDatoR().getId() == idRegistro) {
-                    encontrado = true;
-                    break;
-                }
-                aux = aux.getSiguienteR();
-            } while (aux != inicioR);
-
-            if (encontrado) {
-                String nuevoNombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre ingresado anteriormente:");
-                int nuevaCedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva cédula ingresada anteriormente:"));
-                String nuevoNumTel = JOptionPane.showInputDialog(null, "Ingrese el nuevo número de teléfono ingresado anteriormente:");
-                int nuevaEdad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva edad ingresada anteriormente:"));
-                String nuevaDireccion = JOptionPane.showInputDialog(null, "Ingrese la nueva dirección ingresada anteriormente:");
-
-                aux.getDatoR().setNombre(nuevoNombre);
-                aux.getDatoR().setCedula(nuevaCedula);
-                aux.getDatoR().setNumTelefono(nuevoNumTel);
-                aux.getDatoR().setEdad(nuevaEdad);
-                aux.getDatoR().setDireccion(nuevaDireccion);
-
-                JOptionPane.showMessageDialog(null, "Registro actualizado exitosamente.");
-            } else {
-                throw new Exception("El registro con ID " + idRegistro + " no existe.");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
-        }
-    }
+//        public void editarReporte() {
+//        try {
+//            int idRegistro = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un ID ya registrado que desea editar:"));
+//            NodoReporte aux = inicioR;
+//            boolean encontrado = false;
+//            do {
+//                if (aux.getDatoR().getId() == idRegistro) {
+//                    encontrado = true;
+//                    break;
+//                }
+//                aux = aux.getSiguienteR();
+//            } while (aux != inicioR);
+//
+//            if (encontrado) {
+//                String nuevoNombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre ingresado anteriormente:");
+//                int nuevaCedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva cédula ingresada anteriormente:"));
+//                String nuevoNumTel = JOptionPane.showInputDialog(null, "Ingrese el nuevo número de teléfono ingresado anteriormente:");
+//                int nuevaEdad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva edad ingresada anteriormente:"));
+//                String nuevaDireccion = JOptionPane.showInputDialog(null, "Ingrese la nueva dirección ingresada anteriormente:");
+//
+//                aux.getDatoR().setNombre(nuevoNombre);
+//                aux.getDatoR().setCedula(nuevaCedula);
+//                aux.getDatoR().setNumTelefono(nuevoNumTel);
+//                aux.getDatoR().setEdad(nuevaEdad);
+//                aux.getDatoR().setDireccion(nuevaDireccion);
+//
+//                JOptionPane.showMessageDialog(null, "Registro actualizado exitosamente.");
+//            } else {
+//                throw new Exception("El registro con ID " + idRegistro + " no existe.");
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
+//        }
+//    }
 }
