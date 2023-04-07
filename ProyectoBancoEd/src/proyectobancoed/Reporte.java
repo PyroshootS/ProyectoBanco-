@@ -56,20 +56,54 @@ public class Reporte {
             String s = "";
             NodoReporte aux = inicioR;
             while (aux != null) {
-                s += aux.getDatoR().getNombre() + " // "
-                        + aux.getDatoR().getId() + " // "
-                        + aux.getDatoR().getCedula() + " // "
-                        + aux.getDatoR().getEdad() + " // "
-                        + aux.getDatoR().getDireccion() + " // "
-                        + aux.getDatoR().getNumTelefono() + " -> ";
+                s += "Nombre: "+aux.getDatoR().getNombre() + " \n "
+                        + "ID: "+aux.getDatoR().getId() + " \n "
+                        + "Cédula: "+aux.getDatoR().getCedula() + " \n "
+                        + "Edad: "+ aux.getDatoR().getEdad() + " \n "
+                        + "Dirección: "+aux.getDatoR().getDireccion() + " \n"
+                        + "Teléfono: "+aux.getDatoR().getNumTelefono() + " \n ";
                 aux = aux.getSiguienteR();
             }
-            JOptionPane.showMessageDialog(null, "La lista contiene: " + s, "Contenido",
+            JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Reporte",
                     JOptionPane.PLAIN_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error, No se puede mostrar", "Lista Vacía",
                     JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+        public void editarReporte() {
+        try {
+            int idRegistro = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un ID ya registrado que desea editar:"));
+            NodoReporte aux = inicioR;
+            boolean encontrado = false;
+            do {
+                if (aux.getDatoR().getId() == idRegistro) {
+                    encontrado = true;
+                    break;
+                }
+                aux = aux.getSiguienteR();
+            } while (aux != inicioR);
 
+            if (encontrado) {
+                String nuevoNombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre ingresado anteriormente:");
+                int nuevaCedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva cédula ingresada anteriormente:"));
+                String nuevoNumTel = JOptionPane.showInputDialog(null, "Ingrese el nuevo número de teléfono ingresado anteriormente:");
+                int nuevaEdad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la nueva edad ingresada anteriormente:"));
+                String nuevaDireccion = JOptionPane.showInputDialog(null, "Ingrese la nueva dirección ingresada anteriormente:");
+
+                aux.getDatoR().setNombre(nuevoNombre);
+                aux.getDatoR().setCedula(nuevaCedula);
+                aux.getDatoR().setNumTelefono(nuevoNumTel);
+                aux.getDatoR().setEdad(nuevaEdad);
+                aux.getDatoR().setDireccion(nuevaDireccion);
+
+                JOptionPane.showMessageDialog(null, "Registro actualizado exitosamente.");
+            } else {
+                throw new Exception("El registro con ID " + idRegistro + " no existe.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
+        }
+    }
 }
