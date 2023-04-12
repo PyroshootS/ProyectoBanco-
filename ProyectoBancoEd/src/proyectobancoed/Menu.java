@@ -39,8 +39,8 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         BotonInsertarUsuario = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        BotonDesEncolar = new javax.swing.JMenuItem();
+        BotonCalculadora = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         BotonMostrarFila = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -67,21 +67,21 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(BotonInsertarUsuario);
 
-        jMenuItem1.setText("Atender primero en fila");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        BotonDesEncolar.setText("Atender primero en fila");
+        BotonDesEncolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                BotonDesEncolarActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(BotonDesEncolar);
 
-        jMenuItem2.setText("Calculadora de Impuestos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        BotonCalculadora.setText("Calculadora de Impuestos");
+        BotonCalculadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                BotonCalculadoraActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(BotonCalculadora);
 
         jMenuBar1.add(jMenu1);
 
@@ -209,14 +209,14 @@ public class Menu extends javax.swing.JFrame {
         f.mostrarFila();
     }//GEN-LAST:event_BotonMostrarFilaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void BotonDesEncolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDesEncolarActionPerformed
         f.desencolarFila();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_BotonDesEncolarActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void BotonCalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalculadoraActionPerformed
         f.calculadora();
         
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_BotonCalculadoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,6 +255,8 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem BotonBusacrBD;
+    private javax.swing.JMenuItem BotonCalculadora;
+    private javax.swing.JMenuItem BotonDesEncolar;
     private javax.swing.JMenuItem BotonEliminarBD;
     private javax.swing.JMenuItem BotonInsertarUsuario;
     private javax.swing.JMenuItem BotonMostrarBD;
@@ -267,7 +269,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

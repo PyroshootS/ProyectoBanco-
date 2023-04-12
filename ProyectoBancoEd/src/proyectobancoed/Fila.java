@@ -88,11 +88,8 @@ public class Fila {
     
     public void calculadora()
     {
-        Menu m = new Menu();
         double num =  Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese un monto para calcular el interés compuesto de 10% a un año: \n(Válido para montos iguales o mayores a 10$)"));
         JOptionPane.showMessageDialog(null,"El interés compuesto de 10% a un año de la suma:\n"+num+" \nes el siguiente: \n"+calculosCalcu(num));
-        m.setVisible(true);
-        
     }
     
     private static double calculosCalcu(double num)
