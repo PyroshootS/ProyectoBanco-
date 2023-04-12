@@ -20,7 +20,7 @@ public class BD {
         }
     }
 
-    public void insertarBD(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id) {
+    public void insertarBD(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id, String Estado) {
         Dato d = new Dato();
 
         d.setNombre(Nombre);
@@ -29,6 +29,7 @@ public class BD {
         d.setEdad(Edad);
         d.setDireccion(Direccion);
         d.setId(id);
+        d.setEstado(Estado);
 
         NodoBD nuevo = new NodoBD();
         nuevo.setDatoBd(d);
@@ -63,12 +64,14 @@ public class BD {
         }
     }
 
-    public void Eliminar() {
+    public void Eliminar(Reporte R) {
         try {
             int NumCedulaEliminar = Integer.parseInt(JOptionPane.showInputDialog("Digite el número de cédula de la persona que desea eliminar:"));
+            
             if (inicioBD.getDatoBd().getCedula() == NumCedulaEliminar) {
                 inicioBD = inicioBD.getSiguienteBd();
                 finBD.setSiguienteBd(inicioBD);
+                R.EliminadoEstado(NumCedulaEliminar);
                 JOptionPane.showMessageDialog(null, "Registro Eliminado");
             } else {
                 NodoBD anterior;
@@ -82,9 +85,11 @@ public class BD {
                 if (aux != inicioBD) {
                     anterior.setSiguienteBd(aux.getSiguienteBd());
                     finBD.setSiguienteBd(inicioBD);
+                    R.EliminadoEstado(NumCedulaEliminar);
                     JOptionPane.showMessageDialog(null, "Registro Eliminado");
                 }
             }
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Probablemente el número de Cédula ingresado no existe");
         }
@@ -149,7 +154,7 @@ public class BD {
         }
     }
 
-    public void editarBD() {
+    public void editarBD(Reporte R) {
         try {
             int idRegistro = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un ID ya registrado que desea editar:"));
             NodoBD aux = inicioBD;
@@ -157,6 +162,7 @@ public class BD {
             do {
                 if (aux.getDatoBd().getId() == idRegistro) {
                     encontrado = true;
+                    R.EditadoEstado(idRegistro);
                     break;
                 }
                 aux = aux.getSiguienteBd();
@@ -182,6 +188,7 @@ public class BD {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
         }
+        
     }
     
     

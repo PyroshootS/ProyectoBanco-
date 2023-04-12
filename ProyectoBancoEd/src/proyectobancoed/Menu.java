@@ -172,21 +172,22 @@ public class Menu extends javax.swing.JFrame {
         String DireccionN = JOptionPane.showInputDialog(null, "Digite la dirección: ");
         //int idN = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite el id: "));
         int idN = Id();
+        String EstadoN = "Normal";
         
-        f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
-        b.insertarBD(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
-        r.insertarReporte(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN);
+        f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN,EstadoN);
+        b.insertarBD(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN, EstadoN);
+        r.insertarReporte(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN, EstadoN);
         JOptionPane.showMessageDialog(null, "Se Inserto el Usuario Exitosamente...");
     }//GEN-LAST:event_BotonInsertarUsuarioActionPerformed
 
     private void BotonEliminarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarBDActionPerformed
         // TODO add your handling code here:
-        b.Eliminar();
+        b.Eliminar(r);
     }//GEN-LAST:event_BotonEliminarBDActionPerformed
 
     private void BtonEditarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtonEditarBDActionPerformed
         // TODO add your handling code here:
-        b.editarBD();
+        b.editarBD(r);
     }//GEN-LAST:event_BtonEditarBDActionPerformed
 
     private void BotonMostrarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostrarBDActionPerformed

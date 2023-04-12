@@ -20,7 +20,7 @@ public class Fila {
         }
     }
 
-    public void insertarFila(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id) {
+    public void insertarFila(String Nombre, int Cedula, String NumTel, int Edad, String Direccion, int id, String Estado) {
         Dato d = new Dato();
 
         d.setNombre(Nombre);
@@ -29,6 +29,7 @@ public class Fila {
         d.setEdad(Edad);
         d.setDireccion(Direccion);
         d.setId(id);
+        d.setEstado(Estado);
         
         
         NodoFila nuevo = new NodoFila();

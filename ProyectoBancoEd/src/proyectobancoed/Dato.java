@@ -8,6 +8,7 @@ public class Dato {
     private int Edad;
     private int id;
     private String Direccion;
+    private String Estado;
 
     public Dato() {
         this.Nombre = "";
@@ -16,6 +17,7 @@ public class Dato {
         this.Edad = 0;
         this.id = 0;
         this.Direccion = "";
+        this.Estado = "";
     }
 
     public String getNombre() {
@@ -66,4 +68,13 @@ public class Dato {
         this.Direccion = Direccion;
     }
 
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+
+    
 }
