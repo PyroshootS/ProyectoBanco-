@@ -183,4 +183,6 @@ public class BD {
             JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
         }
     }
+    
+    
 }
