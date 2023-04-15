@@ -76,5 +76,4 @@ public class Dato {
         this.Estado = Estado;
     }
 
-    
 }

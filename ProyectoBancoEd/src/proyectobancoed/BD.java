@@ -67,7 +67,7 @@ public class BD {
     public void Eliminar(Reporte R) {
         try {
             int NumCedulaEliminar = Integer.parseInt(JOptionPane.showInputDialog("Digite el número de cédula de la persona que desea eliminar:"));
-            
+
             if (inicioBD.getDatoBd().getCedula() == NumCedulaEliminar) {
                 inicioBD = inicioBD.getSiguienteBd();
                 finBD.setSiguienteBd(inicioBD);
@@ -89,7 +89,7 @@ public class BD {
                     JOptionPane.showMessageDialog(null, "Registro Eliminado");
                 }
             }
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Probablemente el número de Cédula ingresado no existe");
         }
@@ -101,7 +101,7 @@ public class BD {
             int CedulaBuscar = Integer.parseInt(JOptionPane.showInputDialog("Digite el número de cédula que desea buscar:"));
 
             if (inicioBD.getDatoBd().getCedula() == CedulaBuscar) {
-                JOptionPane.showMessageDialog(null, "Nombre: " + aux.getDatoBd().getNombre()
+                JOptionPane.showMessageDialog(null, " Nombre: " + aux.getDatoBd().getNombre()
                         + ", Id: " + aux.getDatoBd().getId()
                         + ", Cédula: " + aux.getDatoBd().getCedula()
                         + ", Edad: " + aux.getDatoBd().getEdad()
@@ -130,20 +130,22 @@ public class BD {
         if (!vacia()) {
             String s = "";
             NodoBD aux = inicioBD;
-            s += "Nombre: "+ aux.getDatoBd().getNombre() + "\n "
-                    +"ID: "+ aux.getDatoBd().getId() + " \n "
-                    + "Cédula: "+aux.getDatoBd().getCedula() + " \n "
-                    + "Edad: "+aux.getDatoBd().getEdad() + " \n "
-                    + "Dirección: "+aux.getDatoBd().getDireccion() + " \n "
-                    + "Teléfono: "+aux.getDatoBd().getNumTelefono() + " \n ";
+            s += "Nombre: " + aux.getDatoBd().getNombre() + "\n"
+                    + "ID: " + aux.getDatoBd().getId() + "\n"
+                    + "Cédula: " + aux.getDatoBd().getCedula() + " \n"
+                    + "Edad: " + aux.getDatoBd().getEdad() + " \n"
+                    + "Dirección: " + aux.getDatoBd().getDireccion() + " \n"
+                    + "Teléfono: " + aux.getDatoBd().getNumTelefono() + " \n"
+                    + "\n";
             aux = aux.getSiguienteBd();
             while (aux != inicioBD) {
-                s +="Nombre: "+ aux.getDatoBd().getNombre() + " \n "
-                        + "ID: "+aux.getDatoBd().getId() + " \n "
-                        + "Cédula: "+aux.getDatoBd().getCedula() + " \n "
-                        + "Edad: "+aux.getDatoBd().getEdad() + " \n "
-                        + "Dirección: "+aux.getDatoBd().getDireccion() + " \n "
-                        + "Teléfono: "+aux.getDatoBd().getNumTelefono() + " \n ";
+                s += "Nombre: " + aux.getDatoBd().getNombre() + " \n "
+                        + "ID: " + aux.getDatoBd().getId() + " \n "
+                        + "Cédula: " + aux.getDatoBd().getCedula() + " \n "
+                        + "Edad: " + aux.getDatoBd().getEdad() + " \n "
+                        + "Dirección: " + aux.getDatoBd().getDireccion() + " \n "
+                        + "Teléfono: " + aux.getDatoBd().getNumTelefono() + " \n "
+                        + "\n ";
                 aux = aux.getSiguienteBd();
             }
             JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Base de Datos",
@@ -188,8 +190,7 @@ public class BD {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al editar el registro:\n" + e.getMessage());
         }
-        
+
     }
-    
-    
+
 }

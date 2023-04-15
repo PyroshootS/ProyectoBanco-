@@ -63,7 +63,8 @@ public class Reporte {
                         + "Edad: " + aux.getDatoR().getEdad() + " \n "
                         + "Dirección: " + aux.getDatoR().getDireccion() + " \n"
                         + "Teléfono: " + aux.getDatoR().getNumTelefono() + " \n "
-                        + "Estado: " + aux.getDatoR().getEstado() + " \n ";
+                        + "Estado: " + aux.getDatoR().getEstado() + " \n "
+                        + " \n ";
                 aux = aux.getSiguienteR();
             }
             JOptionPane.showMessageDialog(null, "La lista contiene: \n" + s, "Contenido de Reporte",
@@ -78,9 +79,8 @@ public class Reporte {
         if (!vacia()) {
             NodoReporte aux = inicioR;
             while (aux != null) {
-                if (aux.getDatoR().getCedula()== Cedula) {
+                if (aux.getDatoR().getCedula() == Cedula) {
                     aux.getDatoR().setEstado("Eliminado");
-                    JOptionPane.showMessageDialog(null, "Por aqui pase");   //prueba
                     aux = aux.getSiguienteR();
                 } else {
                     aux = aux.getSiguienteR();
@@ -88,14 +88,13 @@ public class Reporte {
             }
         }
     }
-    
-     public void EditadoEstado(int Id) {
+
+    public void EditadoEstado(int Id) {
         if (!vacia()) {
             NodoReporte aux = inicioR;
             while (aux != null) {
-                if (aux.getDatoR().getId()== Id) {
+                if (aux.getDatoR().getId() == Id) {
                     aux.getDatoR().setEstado("Editado");
-                    JOptionPane.showMessageDialog(null, "Por aqui pase");     //prueba
                     aux = aux.getSiguienteR();
                 } else {
                     aux = aux.getSiguienteR();

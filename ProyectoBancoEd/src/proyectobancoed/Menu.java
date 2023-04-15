@@ -7,8 +7,10 @@ import javax.swing.JOptionPane;
  * @author Melissa Ruiz Cruz
  */
 public class Menu extends javax.swing.JFrame {
+
     ///////////////RECURSIVIDAD //////////////////
     private static int idCounter = 0;
+
     private static int Id() {
         return ++idCounter;
     }
@@ -174,10 +176,10 @@ public class Menu extends javax.swing.JFrame {
         int idN = Id();
         String EstadoN = "Normal";
         
-        f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN,EstadoN);
+        f.insertarFila(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN, EstadoN);
         b.insertarBD(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN, EstadoN);
         r.insertarReporte(NombreN, CedulaN, NumTelN, EdadN, DireccionN, idN, EstadoN);
-        JOptionPane.showMessageDialog(null, "Se Inserto el Usuario Exitosamente...");
+        JOptionPane.showMessageDialog(null, "Se Inserto el Usuario Exitosamente ");
     }//GEN-LAST:event_BotonInsertarUsuarioActionPerformed
 
     private void BotonEliminarBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarBDActionPerformed
@@ -216,7 +218,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void BotonCalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalculadoraActionPerformed
         f.calculadora();
-        
+
     }//GEN-LAST:event_BotonCalculadoraActionPerformed
 
     /**

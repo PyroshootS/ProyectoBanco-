@@ -5,7 +5,6 @@ public class NodoFila {
     private Dato datoF;
     private NodoFila SiguienteF;
     private NodoFila anteriorF;
-    
 
     public NodoFila() {
         this.SiguienteF = null;
@@ -35,9 +34,5 @@ public class NodoFila {
     public void setAnteriorF(NodoFila anteriorF) {
         this.anteriorF = anteriorF;
     }
-
-
-
-
 
 }
